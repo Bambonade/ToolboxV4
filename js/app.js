@@ -1,20 +1,10 @@
 const app = Vue.createApp({
-
-    data(){
+    data() {
         return {}
     },
-
-
-    methods: {
-
-    },
-
-    computed: {
+    methods: {},
+    computed: {},
+    mounted: function () {
 
     },
-
-    mounted: function() {
-
-    },
-
 });

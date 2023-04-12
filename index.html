@@ -27,33 +27,32 @@
                 </q-toolbar>
             </q-header>
 
-
             <q-page-container>
-                <toolbox></toolbox>
+                <Toolbox></Toolbox>
             </q-page-container>
-
-
 
             <q-footer elevated>
                 <q-toolbar>
                     <q-toolbar-title>Footer</q-toolbar-title>
                 </q-toolbar>
             </q-footer>
-
         </q-layout>
     </div>
-    <!--    FIX -->
 </div>
 <!-- Vue / Quasar Application -->
 <script src="https://cdn.jsdelivr.net/npm/vue@3/dist/vue.global.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/quasar@2.11.10/dist/quasar.umd.js"></script>
+
+<!-- js files -->
 <script src="js/app-models.js"></script>
 <script src="js/app.js"></script>
 <script src="js/app-components.js"></script>
+
+<!-- app.use Quasar in this file -->
 <script src="js/app-quasar.js"></script>
 
 <script>
-    // Mounting app with Vue
+    // Mounting app with Vue from app.js
     app.mount('#app');
 </script>
 

@@ -6,9 +6,10 @@
 // FIX EDIT
 // FIX NAMES
 
-app.component('toolbox', {
+app.component('Toolbox', {
     data() {
         return {
+            // MOVE ALL TOOLS INTO A TOOLS COLLECTION, THEN DRAWERS, THEN TOOLBOX (multiple toolboxes don't need though)
             tools: [
                 new Tool('1/4" METRIC Socket Set', 'Socket'),
                 new Tool('1/4" SAE Socket Set', 'Socket'),
@@ -36,56 +37,41 @@ app.component('toolbox', {
             ],
         }
     },
-    methods: {
-        addTool() {
-            this.dialogVisible = true
-        },
-        saveTool() {
-            if (this.editingIndex !== null) {
-                this.tools[this.editingIndex].name = this.name
-                this.tools[this.editingIndex].category = this.category
-            } else {
-                this.tools.push({name: this.name, category: this.category})
-            }
-            this.name = ''
-            this.category = ''
-            this.dialogVisible = false
-            this.editingIndex = null
-        },
-        editTool(index) {
-            this.editingIndex = index
-            this.name = this.tools[index].name
-            this.category = this.tools[index].category
-            this.dialogVisible = true
-        },
-        deleteTool(index) {
-            this.tools.splice(index, 1)
-        },
-        cancel() {
-            this.name = ''
-            this.category = ''
-            this.dialogVisible = false
-            this.editingIndex = null
-        }
-    },
 
-    template:
-        `
-    <q-page>
+    props:{},
+
+    methods:{},
+
+    template: `
+    <ToolList></ToolList>
+`
+});
+
+app.component('DrawerList',{
+});
+
+app.component('ToolList', {
+template:`
+<!--TOOL LIST-->
+<q-page>
         <q-list>
             <q-item
-            v-for="(tool, index) in tools"
+            v-for="tool in tools"
             :key="index"
+<!--            NOT SURE IF HEADER AND SUBHEADER WORK-->
             :header="tool.name"
             :subheader="tool.category"
             >
             <q-item-label>
+<!--            ADD & DELETE BUTTONS-->
                 <q-btn @click="editTool(index)" color="primary">Edit</q-btn>
             <q-btn @click="deleteTool(index)" color="negative">Delete</q-btn>
     </q-item-label>
 </q-item>
 </q-list>
 
+<!--ADD TOOL LAYOUT-->
+<!--FIX-->
 <q-dialog v-model="dialogVisible">
     <q-card>
         <q-card-section>
@@ -102,4 +88,8 @@ app.component('toolbox', {
 <q-btn @click="addTool" class="fixed-bottom-right" color="primary" icon="add" />
     </q-page>
 `
+});
+
+app.component('Tool', {
+
 });
