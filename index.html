@@ -27,32 +27,32 @@
                 </q-toolbar>
             </q-header>
 
+
+            <q-page-container>
+                <toolbox></toolbox>
+            </q-page-container>
+
+
+
             <q-footer elevated>
                 <q-toolbar>
                     <q-toolbar-title>Footer</q-toolbar-title>
                 </q-toolbar>
             </q-footer>
 
-            <q-page-container>
-                <q-page class="q-pa-md">
-                    <p v-for="n in 15" :key="n">
-                    </p>
-                </q-page>
-            </q-page-container>
         </q-layout>
     </div>
     <!--    FIX -->
-    <toolbox></toolbox>
 </div>
 <!-- Vue Application -->
-<script src="https://cdn.jsdelivr.net/npm/vue@3/dist/vue.global.prod.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/quasar@2.11.10/dist/quasar.umd.prod.js"></script>
-<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@3/dist/vue.global.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/quasar@2.11.10/dist/quasar.umd.js"></script>
 <script src="js/app-models.js"></script>
 <script src="js/app.js"></script>
 <script src="js/app-components.js"></script>
 
 <script>
+    app.use(Quasar);
     app.mount('#app');
 </script>
 

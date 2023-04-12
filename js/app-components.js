@@ -1,3 +1,10 @@
+// COLLECTIONS
+// tool list holds an array of tools
+// drawer list holds an array of tool list
+// toolbox holds an array of drawers list
+// FIX EDIT
+// FIX NAMES
+
 app.component('toolbox', {
     data() {
         return {
