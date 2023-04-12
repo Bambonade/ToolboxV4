@@ -1,4 +1,5 @@
 // COLLECTIONS
+// MOVE INTO SEPARATE COMPONENTS
 // tool list holds an array of tools
 // drawer list holds an array of tool list
 // toolbox holds an array of drawers list
