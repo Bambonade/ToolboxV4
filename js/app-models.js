@@ -1,8 +1,22 @@
 // USE COLLECTIONS WITH SOME COMPOSITION
 function ToolboxCollection(){
-    let tool = [];
-    let toolList = [];
     let drawerList = [];
+
+    drawerList.addDrawer = function(name){
+        this.push(new Drawer(name, (function(name){
+            drawerList.removeDrawer(name);
+        })))
+    }
+
+    drawerList.removeDrawer = function(drawer){
+        this.splice(this.indexOf(drawer),1);
+        return this;
+    }
+    return drawerList;
+}
+
+function DrawerListCollection (){
+    let toolList = [];
 
     toolList.addTool = function(name){
         this.push(new Tool(name, (function(name){
@@ -16,6 +30,7 @@ function ToolboxCollection(){
     }
     return toolList;
 }
+
 function Tool(name, category){
     this.name = name;
     // switch to drawer
@@ -26,4 +41,5 @@ function Tool(name, category){
 function Drawer(name, category, size){
     this.name = name;
     this.category = category;
+    this.size = size;
 }

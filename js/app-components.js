@@ -48,6 +48,16 @@ app.component('Toolbox', {
 });
 
 app.component('DrawerList',{
+    template:`
+<!--FIX-->
+<q-page>
+    <q-drawer v-model=leftDrawer" side="left" :width="250">
+        <q-scroll-area style="height: calc(100% -50px);">
+            <ToolList></ToolList>
+        </q-scroll-area>
+    </q-drawer>
+</q-page>
+    `
 });
 
 app.component('ToolList', {
@@ -88,8 +98,4 @@ template:`
 <q-btn @click="addTool" class="fixed-bottom-right" color="primary" icon="add" />
     </q-page>
 `
-});
-
-app.component('Tool', {
-
 });
